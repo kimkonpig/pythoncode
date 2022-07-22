@@ -6,11 +6,12 @@ import requests
 from datetime import datetime, timedelta
 
 ## 타겟 사이트 주소(EAI Administrator)
-## 이 주소의 경우 회사망에서만 실행 가능 !
-baseUrl = 'http://10.151.5.5:10103/alert'
+## (EAI테스트서버) 주소의 경우 회사망에서만 실행 가능 !
+baseUrl = 'http://###'
 
 ## 타겟 사이트 접속 시 로그인 정보(Basic Auth 활용)
-r = requests.get(baseUrl, auth=('paranoid', 'survive'))
+## auth=(id, password)
+r = requests.get(baseUrl, auth=('###', '###'))
 # print("[status_code] : ", r.status_code)
 soup = bs(r.content, 'lxml')
 
