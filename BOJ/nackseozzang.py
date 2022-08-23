@@ -68,62 +68,73 @@ import random
 #     else:
 #         print('아쉽습니다. 정답은 {}입니다.\n'.format(word_eng))
 
-def generate_numbers(n):
-    arr = []
-    for i in range(n):
-        # arr.append(random.randint(1, 45))
-        num = random.randint(1, 45)
-        while num in arr:
-            num = random.randint(1, 45)
-        arr.append(num)
-    return arr
 
-def draw_winning_numbers():
-    g_nums = sorted(generate_numbers(6))
-    b_nums = generate_numbers(1)
-    return g_nums + b_nums
 
-def count_matching_numbers(list_1, list_2):
-    cnt = 0
-    for i in range(len(list_1)):
-        for j in range(len(list_2)):
-            if list_1[i] == list_2[j]:
-                cnt += 1
-    return cnt
+# def generate_numbers(n):
+#     arr = []
+#     for i in range(n):
+#         # arr.append(random.randint(1, 45))
+#         num = random.randint(1, 45)
+#         while num in arr:
+#             num = random.randint(1, 45)
+#         arr.append(num)
+#     return arr
 
-def check(numbers, winning_numbers):
-    # 내가 뽑은 번호 6개와 일반 당첨 번호 6개 모두 일치 (10억 원)
-    # 내가 뽑은 번호 5개와 일반 당첨 번호 5개 일치, 그리고 내 번호 1개와 보너스 번호 일치 (5천만 원)
-    # 내가 뽑은 번호 5개와 일반 당첨 번호 5개 일치 (100만 원)
-    # 내가 뽑은 번호 4개와 일반 당첨 번호 4개 일치 (5만 원)
-    # 내가 뽑은 번호 3개와 일반 당첨 번호 3개 일치 (5천 원)
-    count=0
-    special=0
-    result = 0
-    for i in range(len(numbers)):
-        for j in range(len(winning_numbers)):
-            if(numbers[i]==winning_numbers[j]):
-                count+=1
-                if(numbers[i] == winning_numbers[len(winning_numbers) - 1]):
-                    special += 1
-                    count -= 1
+# def draw_winning_numbers():
+#     g_nums = sorted(generate_numbers(6))
+#     b_nums = generate_numbers(1)
+#     return g_nums + b_nums
+
+# def count_matching_numbers(list_1, list_2):
+#     cnt = 0
+#     for i in range(len(list_1)):
+#         for j in range(len(list_2)):
+#             if list_1[i] == list_2[j]:
+#                 cnt += 1
+#     return cnt
+
+# def check(numbers, winning_numbers):
+#     # 내가 뽑은 번호 6개와 일반 당첨 번호 6개 모두 일치 (10억 원)
+#     # 내가 뽑은 번호 5개와 일반 당첨 번호 5개 일치, 그리고 내 번호 1개와 보너스 번호 일치 (5천만 원)
+#     # 내가 뽑은 번호 5개와 일반 당첨 번호 5개 일치 (100만 원)
+#     # 내가 뽑은 번호 4개와 일반 당첨 번호 4개 일치 (5만 원)
+#     # 내가 뽑은 번호 3개와 일반 당첨 번호 3개 일치 (5천 원)
+#     count=0
+#     special=0
+#     result = 0
+#     for i in range(len(numbers)):
+#         for j in range(len(winning_numbers)):
+#             if(numbers[i]==winning_numbers[j]):
+#                 count+=1
+#                 if(numbers[i] == winning_numbers[len(winning_numbers) - 1]):
+#                     special += 1
+#                     count -= 1
     
-    if count == 6:
-        result = 1000000000
-    elif count == 5 and special == 1:
-        result = 50000000
-    elif count == 5:
-        result = 1000000
-    elif count == 4:
-        result = 50000
-    elif count == 3:
-        result = 5000
-    else:
-        result = 0
-    return result
+#     if count == 6:
+#         result = 1000000000
+#     elif count == 5 and special == 1:
+#         result = 50000000
+#     elif count == 5:
+#         result = 1000000
+#     elif count == 4:
+#         result = 50000
+#     elif count == 3:
+#         result = 5000
+#     else:
+#         result = 0
+#     return result
 
-numbers_test = generate_numbers(6)
-winning_numbers_test = draw_winning_numbers()
-print(numbers_test)
-print(winning_numbers_test)
-print(check(numbers_test, winning_numbers_test))
+# numbers_test = generate_numbers(6)
+# winning_numbers_test = draw_winning_numbers()
+# print(numbers_test)
+# print(winning_numbers_test)
+# print(check(numbers_test, winning_numbers_test))
+
+
+
+
+# z = x = ["이가훈", "김원일", "성재훈", "우설희", "최규호"]
+# y = ["강귀윤", "김민주", "최고은", "우설희", "최규호"]
+
+for i in range(3, 9, 2):
+    print(i)
